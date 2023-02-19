@@ -1,12 +1,15 @@
 import React, {FC} from 'react';
 import {observer} from "mobx-react-lite";
-import TodoPage from "./pages/TodoPage/TodoPage";
+import AppRouter from "./components/AppRouter";
+import {BrowserRouter} from "react-router-dom";
+import Header from "./components/Header/Header";
 
 const App: FC = observer(() => {
   return (
-    <div className='container'>
-      <TodoPage/>
-    </div>
+    <BrowserRouter>
+      <Header/>
+      <AppRouter/>
+    </BrowserRouter>
   );
 });
 

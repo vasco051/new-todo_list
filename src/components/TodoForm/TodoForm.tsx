@@ -13,8 +13,7 @@ const TodoForm: FC = observer(() => {
 
   return (
     <section className={styles.todoForm}>
-      <button onClick={() => setIsOpen(prev => !prev)}>{isOpen? 'close' : 'open'}</button>
-
+      <button onClick={() => setIsOpen(prev => !prev)}>{isOpen? 'close' : 'Add todo'}</button>
       {isOpen
         ? <FormAddTodo setIsOpen={setIsOpen}/>
         : <MySelect

@@ -3,9 +3,9 @@ import {ITodo} from "../types/ITodo";
 
 class TodoStore {
   todos: ITodo[] = [
-    {id: 1, body: 'fsfjsadflksdaklf jsaldkf lksadj fls', title: 'title', completed: false, dateOfCreate: {date: '12,321,421', time: '21 32'}},
-    {id: 2, body: 'fsfjsadflksdaklf jsaldkf lksadj fls', title: 'title', completed: false, dateOfCreate: {date: '12,321,421', time: '21 32'}},
-    {id: 3, body: 'fsfjsadflksdaklf jsaldkf lksadj fls', title: 'title', completed: false, dateOfCreate: {date: '12,321,421', time: '21 32'}},
+    {id: 1, title: 'Lorem ipsum dolor sit amet.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed massa nulla, imperdiet ac venenatis varius, blandit at lorem. Nam nec ipsum faucibus, finibus leo pretium, egestas lectus. Morbi suscipit dui a purus vulputate efficitur. Mauris at justo ultricies purus pellentesque.', completed: false, dateOfCreate: {date: '21/12/2002', time: '21:12'}},
+    {id: 2, title: 'Lorem ipsum dolor.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed massa nulla, imperdiet ac venenatis varius, blandit at lorem.', completed: false, dateOfCreate: {date: '21/12/2002', time: '21:21'}},
+    {id: 3, title: 'Lorem ipsum dolor sit.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed massa nulla, imperdiet ac venenatis varius, blandit at lorem. Mauris at justo ultricies purus pellentesque.', completed: false, dateOfCreate: {date: '21/12/2002', time: '22:32'}},
   ]
   isEditId: null | number = null
 

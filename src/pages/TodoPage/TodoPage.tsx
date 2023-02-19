@@ -7,10 +7,12 @@ import {observer} from "mobx-react-lite";
 import TodoSearch from "../../components/TodoSearch/TodoSearch";
 import {getSearchTodos, getSortedTodos} from "../../utils/todoUtilts";
 import searchAndSelectStore from "../../store/searchAndSelectStore";
+import styles from './TodoPage.module.css'
+import clsx from "clsx";
 
 
 const TodoPage: FC = observer(() => {
-  const [todos, setTodos] = useState<ITodo[]>([])
+  const [todos, setTodos] = useState<ITodo[]>(todoStore.getTodos())
 
   const sortedTodos = useMemo(() => {
     return getSortedTodos(todoStore.getTodos(), searchAndSelectStore.selectValue)
@@ -20,12 +22,13 @@ const TodoPage: FC = observer(() => {
     setTodos(getSearchTodos(sortedTodos, searchAndSelectStore.searchValue))
   }, [sortedTodos, searchAndSelectStore.getSearchValue()])
 
+
   return (
-    <div className='todo-page'>
+    <main className={clsx(styles.todoPage, 'container')}>
       <TodoSearch/>
       <TodoForm/>
       <TodoList todos={todos}/>
-    </div>
+    </main>
   );
 });
 
