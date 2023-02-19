@@ -1,0 +1,18 @@
+.form{}
+
+.formItem{
+  margin-bottom: 10px;
+}
+
+.formLabel{}
+
+.formInput{}
+
+.formError{
+  color: red;
+}
+
+.formTextarea{
+  height: 100px;
+  resize: none;
+}

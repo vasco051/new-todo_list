@@ -1,0 +1,35 @@
+.btn{
+  cursor: pointer;
+
+  height: 40px;
+
+  padding: 5px 20px;
+  margin: 5px 0;
+
+  border-radius: 5px;
+  border: 1px solid #373563;
+
+  font-size: 18px;
+}
+
+.primary{
+  background: #3cbcd6;
+}
+
+.danger{
+  background: rgba(255, 147, 0, 0.9);
+}
+
+.completed{
+  background: rgba(22, 177, 43, 0.88);
+}
+
+.icon{
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

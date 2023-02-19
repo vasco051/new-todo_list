@@ -1,0 +1,27 @@
+.todo{
+  border: 1px solid grey;
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+.completed{
+  background: lightgreen;
+}
+
+.todoContent{
+
+}
+
+.todoTitle{
+
+}
+
+.todoBody{
+
+}
+
+
+.todoButtons{
+  display: flex;
+  gap: 5px;
+}
