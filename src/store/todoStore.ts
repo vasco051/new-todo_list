@@ -43,7 +43,6 @@ class TodoStore {
   setIsEditId(id: number | null){
     this.isEditId = id
   }
-
 }
 
 export default new TodoStore()

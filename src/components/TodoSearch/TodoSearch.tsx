@@ -1,10 +1,15 @@
-import React, {ChangeEvent, FC, useCallback, useState} from 'react';
-import {TodoSearchProps} from "./TodoSearchProps";
-import Search from "../UI/seacrh/Search";
-import styles from './TodoSearch.module.css'
-import searchStore from "../../store/searchAndSelectStore";
+import {ChangeEvent, FC, useCallback, useState} from 'react';
 import {observer} from "mobx-react-lite";
+
+import {TodoSearchProps} from "./TodoSearchProps";
+
+import Search from "../UI/seacrh/Search";
+
+import searchStore from "../../store/searchAndSelectStore";
 import debounce from "lodash.debounce";
+
+import styles from './TodoSearch.module.css'
+
 
 const TodoSearch: FC<TodoSearchProps> = observer(() => {
   const [value, setValue] = useState(searchStore.getSearchValue())

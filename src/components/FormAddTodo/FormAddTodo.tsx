@@ -1,13 +1,17 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
+import {FormAddTodoProps, FormValues} from "./FormAddTodoProps";
+
+import MyButton from "../UI/button/MyButton";
 import MyInput from "../UI/input/MyInput";
 import MyTextarea from "../UI/textarea/MyTextarea";
-import clsx from "clsx";
-import MyButton from "../UI/button/MyButton";
 import {useFormik} from "formik";
+
 import todoState from "../../store/todoStore";
-import {FormAddTodoProps, FormValues} from "./FormAddTodoProps";
-import styles from './FormAddTodo.module.css'
 import {createNewTodo} from "../../utils/todoUtilts";
+
+import styles from './FormAddTodo.module.css'
+import clsx from "clsx";
+
 
 const FormAddTodo: FC<FormAddTodoProps> = ({setIsOpen}) => {
   const formik = useFormik({

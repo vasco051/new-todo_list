@@ -1,12 +1,16 @@
-import React, {FC, useEffect, useMemo, useState} from 'react';
-import TodoForm from "../../components/TodoForm/TodoForm";
-import TodoList from "../../components/TodoList/TodoList";
-import {ITodo} from "../../types/ITodo";
-import todoStore from "../../store/todoStore";
+import {FC, useEffect, useMemo, useState} from 'react';
 import {observer} from "mobx-react-lite";
+
+import {ITodo} from "../../types/ITodo";
+
+import TodoForm from "../../components/TodoForm/TodoForm";
 import TodoSearch from "../../components/TodoSearch/TodoSearch";
-import {getSearchTodos, getSortedTodos} from "../../utils/todoUtilts";
+import TodoList from "../../components/TodoList/TodoList";
+
+import todoStore from "../../store/todoStore";
 import searchAndSelectStore from "../../store/searchAndSelectStore";
+import {getSearchTodos, getSortedTodos} from "../../utils/todoUtilts";
+
 import styles from './TodoPage.module.css'
 import clsx from "clsx";
 
@@ -21,7 +25,6 @@ const TodoPage: FC = observer(() => {
   useEffect(() => {
     setTodos(getSearchTodos(sortedTodos, searchAndSelectStore.searchValue))
   }, [sortedTodos, searchAndSelectStore.getSearchValue()])
-
 
   return (
     <main className={clsx(styles.todoPage, 'container')}>

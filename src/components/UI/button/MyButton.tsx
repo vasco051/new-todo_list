@@ -1,5 +1,7 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
+
 import {MyButtonProps} from "./MyButtonProps";
+
 import styles from './MyButton.module.css'
 import clsx from "clsx";
 

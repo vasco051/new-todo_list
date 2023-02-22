@@ -1,5 +1,7 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
+
 import {MyTextareaProps} from "./MyTextareaProps";
+
 import styles from './MyTextarea.module.css'
 import clsx from "clsx";
 

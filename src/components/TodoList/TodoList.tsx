@@ -1,12 +1,15 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
+
 import {TodoListProps} from "./TodoListProps";
+
 import TodoItem from "../TodoItem/TodoItem";
+
 import styles from './TodoList.module.css'
 import clsx from "clsx";
 
 const TodoList: FC<TodoListProps> = ({todos}) => {
   return (
-    <section className={clsx(styles.todoList)}>
+    <section className={styles.todoList}>
       {todos.length
         ?
         todos.map(todo =>

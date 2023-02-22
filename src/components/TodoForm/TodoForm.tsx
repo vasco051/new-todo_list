@@ -1,11 +1,16 @@
-import React, {FC, useState} from 'react';
-import styles from './TodoForm.module.css'
+import {FC, useState} from 'react';
+import {observer} from "mobx-react-lite";
+
 import FormAddTodo from "../FormAddTodo/FormAddTodo";
 import MySelect from "../UI/select/MySelect";
+
 import {SELECT_OPTIONS} from "../../consts/constsTodoPage";
+
 import selectStore from "../../store/searchAndSelectStore";
 import selectState from "../../store/searchAndSelectStore";
-import {observer} from "mobx-react-lite";
+
+import styles from './TodoForm.module.css'
+
 
 
 const TodoForm: FC = observer(() => {

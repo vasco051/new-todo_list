@@ -1,6 +1,9 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
+
 import MyNavbar from "../UI/navbar/MyNavbar";
+
 import {NAVBAR_LINKS} from "../../consts/navbarLinks";
+
 import styles from './Header.module.css'
 import clsx from "clsx";
 

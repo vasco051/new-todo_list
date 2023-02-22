@@ -1,5 +1,7 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
+
 import {MyInputProps} from "./MyInputProps";
+
 import styles from './MyInput.module.css'
 import clsx from "clsx";
 

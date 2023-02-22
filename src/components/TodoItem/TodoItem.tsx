@@ -1,14 +1,18 @@
-import React, {FC} from 'react';
-import MyButton from "../UI/button/MyButton";
+import {FC} from 'react';
 import {TodoItemProps} from "./TodoItemProps";
-import todoState from "../../store/todoStore";
 import {observer} from "mobx-react-lite";
-import clsx from "clsx";
-import styles from './TodoItem.module.css'
+
+import todoState from "../../store/todoStore";
 import todoStore from "../../store/todoStore";
+
+import {useInput} from "../../hooks/useInput";
 import MyInput from "../UI/input/MyInput";
 import MyTextarea from "../UI/textarea/MyTextarea";
-import {useInput} from "../../hooks/useInput";
+import MyButton from "../UI/button/MyButton";
+
+import clsx from "clsx";
+import styles from './TodoItem.module.css'
+
 
 const TodoItem: FC<TodoItemProps> = observer(({todo}) => {
   const {setValue: setEditTitle, ...editTitle} = useInput(todo.title)
@@ -26,26 +30,26 @@ const TodoItem: FC<TodoItemProps> = observer(({todo}) => {
 
   return (
     <div className={clsx(styles.todo, todo.completed && styles.completed)}>
-      <div className={clsx(styles.todoContent)}>
+      <div className={styles.todoContent}>
         <div>Added in: {todo.dateOfCreate.time}</div>
         {todoStore.isEditId === todo.id
           ?
           // При редактировании
           <>
-            <div className={clsx(styles.todoTitle)}><MyInput {...editTitle}/></div>
-            <div className={clsx(styles.todoBody)}><MyTextarea {...editBody}/></div>
+            <div className={styles.todoTitle}><MyInput {...editTitle}/></div>
+            <div className={styles.todoBody}><MyTextarea {...editBody}/></div>
           </>
           // В нормальном состоянии
           :
           <>
-            <div className={clsx(styles.todoTitle)}><h3>{todo.title}</h3></div>
-            <div className={clsx(styles.todoBody)}><p>{todo.body}</p></div>
+            <div className={styles.todoTitle}><h3>{todo.title}</h3></div>
+            <div className={styles.todoBody}><p>{todo.body}</p></div>
           </>
         }
 
       </div>
 
-      <div className={clsx(styles.todoButtons)}>
+      <div className={styles.todoButtons}>
         {todoStore.isEditId === todo.id
           ?
           // Кнопки при редактировании

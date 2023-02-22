@@ -1,9 +1,8 @@
-import React, {FC} from 'react';
-import clsx from "clsx";
+import {FC} from 'react';
 
 const AboutPage: FC = () => {
   return (
-    <main className={clsx('container')}>
+    <main className={'container'}>
       <h1>About</h1>
     </main>
   );
