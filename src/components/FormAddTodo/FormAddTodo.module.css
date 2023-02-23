@@ -1,12 +1,6 @@
-.form{}
-
 .formItem{
   margin-bottom: 10px;
 }
-
-.formLabel{}
-
-.formInput{}
 
 .formError{
   color: red;

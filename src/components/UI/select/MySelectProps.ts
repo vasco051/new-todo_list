@@ -1,13 +1,9 @@
-import {ChangeEvent} from "react";
-
-interface IOption{
-  name: string
+export interface IOption{
   value: string
+  label: string
 }
 
-export interface MySelectProps{
-  defaultValue: string
+export interface MySelectProps {
   options: IOption[]
-  value: string
-  onChange: (e : ChangeEvent<HTMLSelectElement>) => void
+  callback: (value: string) => void
 }

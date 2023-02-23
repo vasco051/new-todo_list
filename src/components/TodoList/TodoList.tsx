@@ -5,7 +5,6 @@ import {TodoListProps} from "./TodoListProps";
 import TodoItem from "../TodoItem/TodoItem";
 
 import styles from './TodoList.module.css'
-import clsx from "clsx";
 
 const TodoList: FC<TodoListProps> = ({todos}) => {
   return (
@@ -16,7 +15,7 @@ const TodoList: FC<TodoListProps> = ({todos}) => {
           <TodoItem todo={todo} key={todo.id}/>
         )
         :
-        <h2>Todo not find</h2>
+        <h2>Todos not found</h2>
       }
     </section>
   );

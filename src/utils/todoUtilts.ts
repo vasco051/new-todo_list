@@ -17,7 +17,7 @@ export function createNewTodo(title: string, body: string) {
   return newTodo
 }
 
-export function getSortedTodos(todos: ITodo[], selector: string) {
+export function getSortedTodos(todos: readonly ITodo[], selector: string) {
   switch (selector) {
     case 'title':
       return [...todos].sort((a, b) => a.title.localeCompare(b.title))

@@ -8,19 +8,6 @@
   background: lightgreen;
 }
 
-.todoContent{
-
-}
-
-.todoTitle{
-
-}
-
-.todoBody{
-
-}
-
-
 .todoButtons{
   display: flex;
   gap: 5px;

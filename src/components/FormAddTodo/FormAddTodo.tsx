@@ -6,11 +6,11 @@ import MyInput from "../UI/input/MyInput";
 import MyTextarea from "../UI/textarea/MyTextarea";
 import {useFormik} from "formik";
 
-import todoState from "../../store/todoStore";
 import {createNewTodo} from "../../utils/todoUtilts";
 
 import styles from './FormAddTodo.module.css'
 import clsx from "clsx";
+import todoStore from "../../store/todoStore/todoStore";
 
 
 const FormAddTodo: FC<FormAddTodoProps> = ({setIsOpen}) => {
@@ -20,7 +20,7 @@ const FormAddTodo: FC<FormAddTodoProps> = ({setIsOpen}) => {
       body: ''
     },
     onSubmit: (values, {resetForm}) => {
-      todoState.addTodo(createNewTodo(values.title, values.body))
+      todoStore.addTodo(createNewTodo(values.title, values.body))
       resetForm()
       setIsOpen(false)
     },

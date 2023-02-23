@@ -7,8 +7,8 @@ import TodoForm from "../../components/TodoForm/TodoForm";
 import TodoSearch from "../../components/TodoSearch/TodoSearch";
 import TodoList from "../../components/TodoList/TodoList";
 
-import todoStore from "../../store/todoStore";
-import searchAndSelectStore from "../../store/searchAndSelectStore";
+import todoStore from "../../store/todoStore/todoStore";
+import searchAndSelectStore from "../../store/searchAndSelectStore/searchAndSelectStore";
 import {getSearchTodos, getSortedTodos} from "../../utils/todoUtilts";
 
 import styles from './TodoPage.module.css'
@@ -16,15 +16,15 @@ import clsx from "clsx";
 
 
 const TodoPage: FC = observer(() => {
-  const [todos, setTodos] = useState<ITodo[]>(todoStore.getTodos())
+  const [todos, setTodos] = useState<ITodo[]>([])
 
   const sortedTodos = useMemo(() => {
-    return getSortedTodos(todoStore.getTodos(), searchAndSelectStore.selectValue)
-  }, [todoStore.getTodos(), searchAndSelectStore.getSelectValue()])
+    return getSortedTodos(todoStore.todoList, searchAndSelectStore.selectValue)
+  }, [todoStore.todoList, searchAndSelectStore.selectValue])
 
   useEffect(() => {
     setTodos(getSearchTodos(sortedTodos, searchAndSelectStore.searchValue))
-  }, [sortedTodos, searchAndSelectStore.getSearchValue()])
+  }, [sortedTodos, searchAndSelectStore.searchValue])
 
   return (
     <main className={clsx(styles.todoPage, 'container')}>

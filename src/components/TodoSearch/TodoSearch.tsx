@@ -5,14 +5,14 @@ import {TodoSearchProps} from "./TodoSearchProps";
 
 import Search from "../UI/seacrh/Search";
 
-import searchStore from "../../store/searchAndSelectStore";
+import searchStore from "../../store/searchAndSelectStore/searchAndSelectStore";
 import debounce from "lodash.debounce";
 
 import styles from './TodoSearch.module.css'
 
 
 const TodoSearch: FC<TodoSearchProps> = observer(() => {
-  const [value, setValue] = useState(searchStore.getSearchValue())
+  const [value, setValue] = useState(searchStore.searchValue)
 
   const debounceSearch = useCallback(debounce((searchValue: string) => {
     searchStore.setSearchValue(searchValue)

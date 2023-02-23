@@ -1,14 +1,9 @@
-.navbar{
-}
-
 .navbarList{
   display: flex;
   align-items: center;
   gap: 10px;
   list-style-type: none;
 }
-
-.navbarItem{}
 
 .navbarLink{
   color: black;

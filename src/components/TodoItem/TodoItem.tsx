@@ -1,9 +1,9 @@
 import {FC} from 'react';
-import {TodoItemProps} from "./TodoItemProps";
 import {observer} from "mobx-react-lite";
 
-import todoState from "../../store/todoStore";
-import todoStore from "../../store/todoStore";
+import {TodoItemProps} from "./TodoItemProps";
+
+import todoStore from "../../store/todoStore/todoStore";
 
 import {useInput} from "../../hooks/useInput";
 import MyInput from "../UI/input/MyInput";
@@ -19,11 +19,11 @@ const TodoItem: FC<TodoItemProps> = observer(({todo}) => {
   const {setValue: setEditBody, ...editBody} = useInput(todo.body)
 
   const agreeEdit = () => {
-    todoStore.editTodo(todo.id, editTitle.value, editBody.value)
+    todoStore.editTodo(todo, editTitle.value, editBody.value)
   }
 
   const disagreeEdit = () => {
-    todoStore.setIsEditId(null)
+    todoStore.changeIdEdit(null)
     setEditTitle(todo.title)
     setEditBody(todo.body)
   }
@@ -32,7 +32,7 @@ const TodoItem: FC<TodoItemProps> = observer(({todo}) => {
     <div className={clsx(styles.todo, todo.completed && styles.completed)}>
       <div className={styles.todoContent}>
         <div>Added in: {todo.dateOfCreate.time}</div>
-        {todoStore.isEditId === todo.id
+        {todoStore.isIdEdit === todo.id
           ?
           // При редактировании
           <>
@@ -50,7 +50,7 @@ const TodoItem: FC<TodoItemProps> = observer(({todo}) => {
       </div>
 
       <div className={styles.todoButtons}>
-        {todoStore.isEditId === todo.id
+        {todoStore.isIdEdit === todo.id
           ?
           // Кнопки при редактировании
           <>
@@ -67,15 +67,15 @@ const TodoItem: FC<TodoItemProps> = observer(({todo}) => {
           // Кнопки в обычном состоянии
           <>
             <MyButton
-              variant='primary' onClick={() => todoState.completedTodo(todo.id)} isIcon
+              variant='primary' onClick={() => todoStore.changeCompleted(todo)} isIcon
             ><span>{todo.completed ? <>&#9745;</> : <>&#9744;</>}</span></MyButton>
 
             <MyButton
-              variant='secondary' onClick={() => todoState.setIsEditId(todo.id)} isIcon
+              variant='secondary' onClick={() => todoStore.changeIdEdit(todo.id)} isIcon
             ><span>&#9998;</span></MyButton>
 
             <MyButton
-              variant='danger' onClick={() => todoState.removeTodo(todo.id)} isIcon
+              variant='danger' onClick={() => todoStore.removeTodo(todo.id)} isIcon
             ><span>&#10006;</span></MyButton></>
         }
       </div>
